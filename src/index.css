@@ -18,3 +18,9 @@ form {
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(155, 155, 155, 0.7);
   }
+
+
+  .chakra-heading.css-1w4mip4{
+    font-size: xx-large;
+  }
+

@@ -1,56 +1,58 @@
+// components/GenreList.tsx
 import {
-  Button,
-  HStack,
-  Heading,
-  Image,
   List,
   ListItem,
-  Spinner,
+  HStack,
+  Image,
   Text,
+  Box,
+  Heading,
 } from "@chakra-ui/react";
-
 import useGenres from "../hooks/useGeneres";
 import getCroppedImageUrl from "../services/imageUrl";
-import useGameQueryStore from "../store/useGameQuery";
+import useGameQueryStore from "../store";
 
-
-
-
-const GenereList = () => {
+const GenreList = () => {
   const selectedGenreId = useGameQueryStore(s => s.gameQuery.genreId);
-  const setSelectgedGenreId = useGameQueryStore(s => s.setGenreId);
-  // const { data, isLoading, error } = useData<Genre>("/genres");
-  const {data,isLoading,error} = useGenres();
+  const setSelectedGenreId = useGameQueryStore(s => s.setGenreId);
+  const { data } = useGenres();
+  const textColor = "white";
+  const hoverBg = "whiteAlpha.200";
+  const selectedBg = "whiteAlpha.300";
+
   return (
-    <>
-    <Heading fontSize={'2xl'} paddingBottom={5}>Genres</Heading>
-      <List>
-        {isLoading && <Spinner />}
-        {error && <Text>{error.message}</Text>}
-        {data?.results.map((genre) => (
-          <ListItem marginBottom={4} key={genre.id}>
+    <Box p={0} color={textColor}>
+      <Heading size="lg" mb={4}>Genres</Heading>
+      <List spacing={1}>
+        {data?.results.map(genre => (
+          <ListItem
+            key={genre.id}
+            onClick={() => setSelectedGenreId(genre.id)}
+            cursor="pointer"
+            p={2}
+            borderRadius={20}
+            fontSize={18}
+            fontWeight={'700'}
+            bgColor={'black'}
+            bg={genre.id === selectedGenreId ? selectedBg : 'transparent'}
+            _hover={{ bg: hoverBg }}
+          >
             <HStack>
               <Image
-                boxSize={8}
-                borderRadius={4}
-                objectFit={'cover'}
+                boxSize="32px"
+                borderRadius={8}
+                objectFit="cover"
                 src={getCroppedImageUrl(genre.image_background)}
               />
-              <Button
-              fontWeight={genre.id === selectedGenreId ? 'bold' : 'normal'}
-                fontSize={"100%"}
-                variant={"link"}
-                onClick={() => setSelectgedGenreId(genre.id)}
-                color={genre.id === selectedGenreId ? 'blue.500' : 'normal'}
-              >
+              <Text fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}>
                 {genre.name}
-              </Button>
+              </Text>
             </HStack>
           </ListItem>
         ))}
       </List>
-    </>
+    </Box>
   );
 };
 
-export default GenereList;
+export default GenreList;

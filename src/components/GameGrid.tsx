@@ -5,6 +5,11 @@ import {
   Spinner,
   VStack,
   useColorModeValue,
+  Button,
+  ButtonGroup,
+  HStack,
+  Center,
+  Heading,
 } from "@chakra-ui/react";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -12,6 +17,8 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameDetailsDrawer from "./GameDetailsDrawer";
 import useGameDrawer from "../store/useGameDrawer";
+import GameHeading from './GameHeading';
+import CategoryChips from "./CategoryChips";
 
 const GameGrid = () => {
   const {
@@ -40,7 +47,19 @@ const GameGrid = () => {
   }
 
   return (
-    <Box bgGradient={bgGradient} minH="100vh" py={8}>
+    <>
+    <Box bgGradient={bgGradient} minH="100vh" py={1} borderRadius={20}>
+     <HStack alignContent={'Center'} px={5}>
+   <Heading size={'h1'}>
+      <GameHeading/>
+      </Heading>
+ 
+        
+        <ButtonGroup pt={5} px={2}>
+          <CategoryChips/>
+        </ButtonGroup>
+      </HStack>
+    
       <InfiniteScroll
         dataLength={fetchedGameCount}
         hasMore={!!hasNextPage}
@@ -52,7 +71,7 @@ const GameGrid = () => {
         }
       >
         <SimpleGrid
-          columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+          columns={{ base: 1, sm:1, md: 2, lg: 3, xl: 4 }}
           spacing={6}
           padding="20px"
         >
@@ -72,6 +91,7 @@ const GameGrid = () => {
         onClose={onClose}
       />
     </Box>
+    </>
   );
 };
 

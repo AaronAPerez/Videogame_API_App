@@ -1,36 +1,51 @@
-import { Button, ButtonGroup, HStack, Image } from "@chakra-ui/react"
-import logo from '../assets/logo.webp'
-import ColorModeSwitch from "./ColorModeSwitch"
+import { Box, Button, ButtonGroup, HStack, Image } from '@chakra-ui/react';
+import logo from '../assets/logo.png';
 import SearchInput from "./SearchInput"
 import { Link } from 'react-router-dom';
-import { FaGamepad } from 'react-icons/fa';
-
+// import { FaGamepad } from 'react-icons/fa';
+import NES from '../assets/Nes-Pad.512.png'
+import { GoSun } from "react-icons/go";
 
 
 const NavBar = () => {
   return (
     <>
       <HStack>
-        <Image src={logo} boxSize='60px' />
+        <Image src={logo} boxSize='70px' />
         <Link to="/">
      
             {/* <Image src={NES} boxSize='60px' title='HOME' /> */}
           </Link>
-          {/* <Link to="/games">
-            GAMES
-            {/* <Image src={NESPad} boxSize='60px' title='GAMES' /> 
-          </Link> */}
+   
        
-            <Button leftIcon={<FaGamepad />}>
-              <Link to="/arcade">
-                Arcade
+        
+              
+            
+
+            {/* <Button leftIcon={<FaGamepad fontSize={20}/>}> */}
+
+            <Link to="/arcade" title="Arcade"> 
+            <Image src={NES} width={24} title='GAMES'/> 
               </Link>
-            </Button>
+          
         <SearchInput />
-        <ColorModeSwitch />
+        {/* <ColorModeSwitch /> */}
+        <Box padding={2}>
+        <GoSun size={20}/>
+      </Box>
+        
         <ButtonGroup spacing='4'>
-          <Button variant='outline' colorScheme='blue' borderRadius={20}>Sign up</Button>
-          <Button colorScheme="blue" borderRadius={20}>Log in</Button>
+          <Link to="/login">
+
+          <Button variant='outline' colorScheme='blue' borderRadius={20}>
+            Sign up
+            </Button>
+            </Link>
+          <Link to="/login">
+          <Button colorScheme="blue" borderRadius={20}>
+            Log in
+            </Button>
+            </Link>
         </ButtonGroup>
         {/* <Avatar src='https://bit.ly/broken-link' /> */}
       </HStack>

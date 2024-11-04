@@ -1,7 +1,7 @@
 import { Heading } from "@chakra-ui/react"
 import useGenre from "../hooks/useGenre"
 import usePlatform from "../hooks/usePlatform"
-import useGameQueryStore from "../store/useGameQuery"
+import useGameQuery from "../store"
 
 
 
@@ -12,10 +12,10 @@ const GameHeading = () => {
     //Xbox Games    
     //Xbox Action Games
 
-    const genreId = useGameQueryStore( s => s.gameQuery.genreId);
+    const genreId = useGameQuery( s => s.gameQuery.genreId);
     const genre = useGenre(genreId);
     
-    const platformId = useGameQueryStore(s => s.gameQuery.platformId);
+    const platformId = useGameQuery(s => s.gameQuery.platformId);
     const platform = usePlatform(platformId)
    
 
@@ -25,7 +25,7 @@ const GameHeading = () => {
 
   return (
   <>
-    <Heading marginY={5} fontSize={'5xl'} as={'h1'}>
+    <Heading marginY={3} fontSize={'h1'}>
     {heading}
     </Heading>
   </>

@@ -13,8 +13,8 @@ import {
   } from "@chakra-ui/react";
   import { FaChevronDown } from "react-icons/fa";
   import useGenres from "../hooks/useGeneres";
-  import usePlatforms from "../hooks/usePlatforms";
-  import useGameQueryStore from "../store/useGameQuery";
+  import useGameQueryStore from "../store";
+import usePlatforms from "../hooks/usePlatforms";
   
   const CategoryChips = () => {
     const { data: genres } = useGenres();
@@ -31,10 +31,12 @@ import {
     const selectedPlatform = platforms?.results.find((p) => p.id === selectedPlatformId);
   
     return (
+
+    
       <Wrap spacing={2} mb={4}>
         <HStack spacing={2}>
           <Menu>
-            <MenuButton as={Button} rightIcon={<FaChevronDown />} size="sm">
+            <MenuButton as={Button} rightIcon={<FaChevronDown />} size="sm" borderRadius={20}>
               Genre
             </MenuButton>
             <MenuList>
@@ -51,7 +53,7 @@ import {
           </Menu>
   
           <Menu>
-            <MenuButton as={Button} rightIcon={<FaChevronDown />} size="sm">
+            <MenuButton as={Button} rightIcon={<FaChevronDown />} size="sm" borderRadius={20}>
               Platform
             </MenuButton>
             <MenuList>
@@ -72,7 +74,7 @@ import {
           {selectedGenre && (
             <Tag 
               size="md" 
-              borderRadius="full" 
+              borderRadius={20} 
               bg={activeBg}
               variant="subtle"
             >
@@ -84,7 +86,7 @@ import {
           {selectedPlatform && (
             <Tag 
               size="md" 
-              borderRadius="full" 
+              borderRadius={20} 
               bg={activeBg}
               variant="subtle"
             >
@@ -94,6 +96,7 @@ import {
           )}
         </HStack>
       </Wrap>
+    
     );
   };
   

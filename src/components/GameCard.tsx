@@ -26,6 +26,8 @@ const GameCard = ({ game }: Props) => {
   return (
     <Box
       borderRadius="lg"
+      boxShadow='dark-lg' 
+      rounded='md' 
       overflow="hidden"
       bg={cardBg}
       transition="all 0.3s"
