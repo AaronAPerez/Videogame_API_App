@@ -6,7 +6,6 @@ import {
     Text,
     Box,
     IconButton,
-    useColorModeValue,
     SimpleGrid,
     useToast,
   } from "@chakra-ui/react";
@@ -20,8 +19,7 @@ import {
     const saveStates = useRetroGaming((s) => s.saveStates);
     const currentGame = useRetroGaming((s) => s.currentGame);
     const toast = useToast();
-    const bgColor = useColorModeValue("gray.50", "gray.700");
-    const hoverBg = useColorModeValue("gray.100", "gray.600");
+  
   
     const handleLoadState = async (stateId: string) => {
       try {
@@ -66,12 +64,10 @@ import {
         {filteredStates.map((state) => (
           <MotionBox
             key={state.id}
-            bg={bgColor}
             p={3}
             borderRadius="lg"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
-            _hover={{ bg: hoverBg }}
           >
             <HStack spacing={4}>
               <Image

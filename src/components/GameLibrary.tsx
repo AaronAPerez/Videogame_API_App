@@ -10,7 +10,6 @@ import {
     InputLeftElement,
     Select,
     SimpleGrid,
-    useColorModeValue,
     Badge,
   } from "@chakra-ui/react";
   import { useState } from "react";
@@ -51,10 +50,8 @@ import {
   const GameLibrary = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [filterSystem, setFilterSystem] = useState("");
-    const setCurrentGame = useRetroGaming((s) => s.setCurrentGame);
-    const currentSystem = useRetroGaming((s) => s.currentSystem);
-    const bgColor = useColorModeValue("gray.50", "gray.700");
-    const hoverBg = useColorModeValue("gray.100", "gray.600");
+
+
   
     const filteredGames = mockGames.filter(
       (game) =>
@@ -89,14 +86,14 @@ import {
           {filteredGames.map((game) => (
             <MotionBox
               key={game.id}
-              bg={bgColor}
+           
               p={3}
               borderRadius="lg"
               cursor="pointer"
               onClick={() => setCurrentGame(game)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              _hover={{ bg: hoverBg }}
+           
             >
               <HStack spacing={4}>
                 <Image

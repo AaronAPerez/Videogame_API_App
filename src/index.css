@@ -1,26 +1,22 @@
+body.chakra-ui-dark{
+  background-color: #000000;
+}
+
 form {
     width: 100%;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(155, 155, 155, 0.5);
-    border-radius: 4px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(155, 155, 155, 0.7);
-  }
-
-
   .chakra-heading.css-1w4mip4{
     font-size: xx-large;
   }
+
+  :root[data-theme=dark], [data-theme][data-theme=dark] {
+    background: none !important;
+  }
+
+  .css-1vms755{
+    padding-right: 8px !important;
+  }
+
+
 

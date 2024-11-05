@@ -50,7 +50,6 @@ export const SignupPage = () => {
           <Box
             py={{ base: '0', sm: '8' }}
             px={{ base: '4', sm: '10' }}
-            bg={useColorModeValue('white', 'gray.800')}
             boxShadow={{ base: 'none', sm: 'md' }}
             borderRadius={{ base: 'none', sm: 'xl' }}
           >

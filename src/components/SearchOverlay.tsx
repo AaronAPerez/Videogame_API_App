@@ -10,7 +10,6 @@ import {
     Image,
     Text,
     Box,
-    useColorModeValue,
     IconButton,
   } from "@chakra-ui/react";
   import { useRef } from "react";
@@ -29,7 +28,6 @@ import {
     const inputRef = useRef<HTMLInputElement>(null);
     const { data } = useGames();
     const onOpen = useGameDrawer((s) => s.onOpen);
-    const bg = useColorModeValue("white", "gray.800");
   
     const handleGameClick = (gameId: number) => {
       onOpen(gameId);
@@ -38,8 +36,8 @@ import {
   
     return (
       <Modal isOpen={isOpen} onClose={onClose} size="2xl">
-        <ModalOverlay bg="blackAlpha.700" backdropFilter="blur(10px)" />
-        <ModalContent bg={bg} my={4}>
+        <ModalOverlay backdropFilter="blur(10px)" />
+        <ModalContent my={4}>
           <Box p={4}>
             <InputGroup size="lg">
               <InputLeftElement>
@@ -67,7 +65,6 @@ import {
                   key={game.id}
                   p={2}
                   borderRadius="md"
-                  _hover={{ bg: useColorModeValue("gray.100", "gray.700") }}
                   cursor="pointer"
                   onClick={() => handleGameClick(game.id)}
                 >

@@ -4,7 +4,6 @@ import {
   Text,
   Flex,
   IconButton,
-  useColorModeValue,
   AspectRatio,
 } from "@chakra-ui/react";
 import { FaPlay } from "react-icons/fa";
@@ -20,21 +19,19 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   const onOpen = useGameDrawer((s) => s.onOpen);
-  const cardBg = useColorModeValue("white", "gray.800");
-  const hoverBg = useColorModeValue("gray.50", "gray.700");
+
 
   return (
     <Box
       borderRadius="lg"
+      backgroundColor={'#1E1E1E'}
       boxShadow='dark-lg' 
       rounded='md' 
       overflow="hidden"
-      bg={cardBg}
       transition="all 0.3s"
       _hover={{
         transform: "translateY(-4px)",
         shadow: "lg",
-        bg: hoverBg,
       }}
       role="group"
       cursor="pointer"
@@ -54,7 +51,7 @@ const GameCard = ({ game }: Props) => {
           left="0"
           right="0"
           bottom="0"
-          bg="blackAlpha.600"
+          bg="blackAlpha.500"
           alignItems="center"
           justifyContent="center"
           opacity="0"
@@ -74,7 +71,7 @@ const GameCard = ({ game }: Props) => {
         </Flex>
       </Box>
 
-      <Box p={4}>
+      <Box p={2}>
         <Text
           fontWeight="semibold"
           fontSize="lg"

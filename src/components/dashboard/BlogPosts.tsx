@@ -8,7 +8,7 @@
     IconButton,
     Image,
     Text,
-    useColorModeValue,
+
     VStack,
   } from "@chakra-ui/react";
   import { FaHeart, FaRetweet, FaComment } from "react-icons/fa";

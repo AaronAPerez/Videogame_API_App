@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <>
       <HStack>
-        <Image src={logo} boxSize='70px' />
+        <Image src={logo} boxSize='5rem' />
         <Link to="/">
      
             {/* <Image src={NES} boxSize='60px' title='HOME' /> */}
@@ -25,7 +25,7 @@ const NavBar = () => {
             {/* <Button leftIcon={<FaGamepad fontSize={20}/>}> */}
 
             <Link to="/arcade" title="Arcade"> 
-            <Image src={NES} width={24} title='GAMES'/> 
+            <Image src={NES} width={'4.5rem'} title='GAMES'/> 
               </Link>
           
         <SearchInput />

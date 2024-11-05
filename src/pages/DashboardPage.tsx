@@ -19,8 +19,8 @@ import {
   import CreatePost from "../components/dashboard/CreatePost";
   
   const DashboardPage = () => {
-    const bgColor = useColorModeValue("white", "gray.800");
-    const borderColor = useColorModeValue("gray.200", "gray.700");
+ 
+   
   
     return (
       <Container maxW="container.xl" py={8}>
@@ -32,22 +32,18 @@ import {
           <GridItem>
             <VStack spacing={8}>
               <Box
-                bg={bgColor}
                 p={6}
                 borderRadius="lg"
                 borderWidth="1px"
-                borderColor={borderColor}
                 w="100%"
               >
                 <UserProfile />
               </Box>
               
               <Box
-                bg={bgColor}
                 p={6}
                 borderRadius="lg"
                 borderWidth="1px"
-                borderColor={borderColor}
                 w="100%"
               >
                 <FavoriteGames />
@@ -59,20 +55,16 @@ import {
           <GridItem>
             <VStack spacing={8} align="stretch">
               <Box
-                bg={bgColor}
                 p={6}
                 borderRadius="lg"
                 borderWidth="1px"
-                borderColor={borderColor}
               >
                 <CreatePost />
               </Box>
   
               <Box
-                bg={bgColor}
                 borderRadius="lg"
                 borderWidth="1px"
-                borderColor={borderColor}
               >
                 <Tabs isLazy>
                   <TabList px={6} pt={4}>

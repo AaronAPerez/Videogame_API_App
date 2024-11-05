@@ -6,7 +6,6 @@ import {
   IconButton,
   Progress,
   VStack,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa";
 import { useState, useEffect } from "react";
@@ -20,8 +19,7 @@ const MiniPlayer = ({ gameId }: Props) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const { data: game } = useGameDetails(gameId || 0);
-  const bg = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
+
 
   useEffect(() => {
     if (isPlaying) {
@@ -40,9 +38,8 @@ const MiniPlayer = ({ gameId }: Props) => {
       bottom={0}
       left={0}
       right={0}
-      bg={bg}
       borderTop="1px"
-      borderColor={borderColor}
+    
       py={2}
       zIndex={100}
     >

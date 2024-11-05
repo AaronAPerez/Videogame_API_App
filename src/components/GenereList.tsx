@@ -8,7 +8,7 @@ import {
   Box,
   Heading,
 } from "@chakra-ui/react";
-import useGenres from "../hooks/useGeneres";
+import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/imageUrl";
 import useGameQueryStore from "../store";
 
@@ -21,8 +21,8 @@ const GenreList = () => {
   const selectedBg = "whiteAlpha.300";
 
   return (
-    <Box p={0} color={textColor}>
-      <Heading size="lg" mb={4}>Genres</Heading>
+    <Box px={2} color={textColor} backgroundColor={'#121212'} borderRadius={20}>
+      <Heading size="lg" mb={4} px={2} py={1}>Genres</Heading>
       <List spacing={1}>
         {data?.results.map(genre => (
           <ListItem
@@ -33,9 +33,11 @@ const GenreList = () => {
             borderRadius={20}
             fontSize={18}
             fontWeight={'700'}
-            bgColor={'black'}
+            alignItems="center"
+            justifyContent="center"
+            transition="opacity 0.3s"  
             bg={genre.id === selectedGenreId ? selectedBg : 'transparent'}
-            _hover={{ bg: hoverBg }}
+         
           >
             <HStack>
               <Image

@@ -8,10 +8,13 @@ import {
     TabPanel,
     TabPanels,
     Tabs,
-    useColorModeValue,
     VStack,
   } from "@chakra-ui/react";
 import RetroEmulator from "../components/RetroEmulator";
+import SystemGrid from "../components/SystemGrid";
+import GameLibrary from "../components/GameLibrary";
+import SaveStates from "../components/SaveStates";
+import Favorites from "../components/Favorites";
 //   import RetroEmulator from "./RetroEmulator";
 //   import SystemGrid from "./SystemGrid";
 //   import GameLibrary from "./GameLibrary";
@@ -21,8 +24,7 @@ import RetroEmulator from "../components/RetroEmulator";
   
   const ArcadePage = () => {
     const currentGame = useRetroGaming((s) => s.currentGame);
-    const bgColor = useColorModeValue("white", "gray.800");
-    const borderColor = useColorModeValue("gray.200", "gray.700");
+
   
     return (
       <Grid
@@ -40,11 +42,9 @@ import RetroEmulator from "../components/RetroEmulator";
       >
         <Box
           gridArea="game"
-          bg={bgColor}
           borderRadius="lg"
           p={4}
           borderWidth="1px"
-          borderColor={borderColor}
         >
           {currentGame ? (
             <RetroEmulator />
@@ -58,10 +58,8 @@ import RetroEmulator from "../components/RetroEmulator";
   
         <Box
           gridArea="content"
-          bg={bgColor}
           borderRadius="lg"
           borderWidth="1px"
-          borderColor={borderColor}
         >
           <Tabs isLazy>
             <TabList px={4}>

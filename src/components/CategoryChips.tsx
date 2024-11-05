@@ -4,7 +4,6 @@ import {
     TagLabel,
     TagCloseButton,
     Wrap,
-    useColorModeValue,
     Button,
     Menu,
     MenuButton,
@@ -12,7 +11,7 @@ import {
     MenuItem,
   } from "@chakra-ui/react";
   import { FaChevronDown } from "react-icons/fa";
-  import useGenres from "../hooks/useGeneres";
+  import useGenres from "../hooks/useGenres";
   import useGameQueryStore from "../store";
 import usePlatforms from "../hooks/usePlatforms";
   
@@ -24,8 +23,6 @@ import usePlatforms from "../hooks/usePlatforms";
     const setGenreId = useGameQueryStore((s) => s.setGenreId);
     const setPlatformId = useGameQueryStore((s) => s.setPlatformId);
     
-    const tagBg = useColorModeValue("gray.100", "gray.700");
-    const activeBg = useColorModeValue("green.100", "green.700");
   
     const selectedGenre = genres?.results.find((g) => g.id === selectedGenreId);
     const selectedPlatform = platforms?.results.find((p) => p.id === selectedPlatformId);
@@ -75,7 +72,6 @@ import usePlatforms from "../hooks/usePlatforms";
             <Tag 
               size="md" 
               borderRadius={20} 
-              bg={activeBg}
               variant="subtle"
             >
               <TagLabel>{selectedGenre.name}</TagLabel>
@@ -87,7 +83,6 @@ import usePlatforms from "../hooks/usePlatforms";
             <Tag 
               size="md" 
               borderRadius={20} 
-              bg={activeBg}
               variant="subtle"
             >
               <TagLabel>{selectedPlatform.name}</TagLabel>

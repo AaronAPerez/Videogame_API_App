@@ -5,9 +5,6 @@ import useGameQueryStore from "../store";
 import usePlatform from "../hooks/usePlatform";
 
 
-
-
-
 const PlatformSelector = () => {
 
    const {data,error} = usePlatforms()

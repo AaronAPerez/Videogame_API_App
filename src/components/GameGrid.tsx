@@ -4,7 +4,6 @@ import {
   Text,
   Spinner,
   VStack,
-  useColorModeValue,
   Button,
   ButtonGroup,
   HStack,
@@ -30,10 +29,6 @@ const GameGrid = () => {
   } = useGames();
   const { isOpen, onClose, gameId } = useGameDrawer();
 
-  const bgGradient = useColorModeValue(
-    "linear(to-b, gray.50, white)",
-    "linear(to-b, gray.900, gray.800)"
-  );
 
   const fetchedGameCount =
     data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
@@ -48,8 +43,9 @@ const GameGrid = () => {
 
   return (
     <>
-    <Box bgGradient={bgGradient} minH="100vh" py={1} borderRadius={20}>
-     <HStack alignContent={'Center'} px={5}>
+    <Box py={1} borderRadius={20}>
+    <Box backgroundColor={'#121212'} minH="100vh" py={1} borderRadius={20}> 
+     <HStack alignContent={'Center'} px={4}>
    <Heading size={'h1'}>
       <GameHeading/>
       </Heading>
@@ -90,6 +86,7 @@ const GameGrid = () => {
         isOpen={isOpen}
         onClose={onClose}
       />
+    </Box>
     </Box>
     </>
   );

@@ -8,7 +8,7 @@ import {
     SimpleGrid,
     IconButton,
     Badge,
-    useColorModeValue,
+
   } from "@chakra-ui/react";
   import { FaPlay, FaHeart } from "react-icons/fa";
   import { motion } from "framer-motion";
@@ -20,8 +20,7 @@ import useRetroGaming from "../hooks/useRetroGaming";
     const favorites = useRetroGaming((s) => s.favorites);
     const setCurrentGame = useRetroGaming((s) => s.setCurrentGame);
     const toggleFavorite = useRetroGaming((s) => s.toggleFavorite);
-    const bgColor = useColorModeValue("gray.50", "gray.700");
-    const hoverBg = useColorModeValue("gray.100", "gray.600");
+
   
     if (favorites.length === 0) {
       return (
@@ -37,12 +36,12 @@ import useRetroGaming from "../hooks/useRetroGaming";
         {favorites.map((game) => (
           <MotionBox
             key={game.id}
-            bg={bgColor}
+      
             p={3}
             borderRadius="lg"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
-            _hover={{ bg: hoverBg }}
+        
           >
             <HStack spacing={4}>
               <Image

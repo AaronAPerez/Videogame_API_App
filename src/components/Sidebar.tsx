@@ -6,7 +6,6 @@ import {
     Flex,
     Link,
     Image,
-    useColorModeValue,
   } from "@chakra-ui/react";
   import { Link as RouterLink, useLocation } from "react-router-dom";
   import { FaHome, FaCompass } from "react-icons/fa";
@@ -15,8 +14,7 @@ import {
   
   const Sidebar = () => {
     const location = useLocation();
-    const activeBg = useColorModeValue("gray.200", "gray.700");
-    const hoverBg = useColorModeValue("gray.100", "gray.600");
+
   
     const navItems = [
       { icon: FaHome, label: "Home", path: "/" },
@@ -27,9 +25,9 @@ import {
     return (
       <Box
         width="240px"
-        bg={useColorModeValue("white", "gray.800")}
+       
         borderRight="1px"
-        borderColor={useColorModeValue("gray.200", "gray.700")}
+     
         height="100vh"
         position="sticky"
         top="0"
@@ -56,10 +54,7 @@ import {
                     borderRadius="lg"
                     role="group"
                     cursor="pointer"
-                    bg={isActive ? activeBg : "transparent"}
-                    _hover={{
-                      bg: hoverBg,
-                    }}
+               
                   >
                     <Icon
                       as={item.icon}

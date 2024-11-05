@@ -2,7 +2,7 @@ import { FaGoogle, FaGithub, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useToast, Container, Stack, Heading, Box, useColorModeValue, FormControl, FormLabel, Input, FormErrorMessage, InputGroup, InputRightElement, IconButton, Button, HStack, Divider, Icon, Text } from "@chakra-ui/react";
+import { useToast, Container, Stack, Heading, Box, FormControl, FormLabel, Input, FormErrorMessage, InputGroup, InputRightElement, IconButton, Button, HStack, Divider, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -67,7 +67,6 @@ export const LoginPage = () => {
         <Box
           py={{ base: '0', sm: '8' }}
           px={{ base: '4', sm: '10' }}
-          bg={useColorModeValue('white', 'gray.800')}
           boxShadow={{ base: 'none', sm: 'md' }}
           borderRadius={{ base: 'none', sm: 'xl' }}
         >
