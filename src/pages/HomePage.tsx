@@ -1,13 +1,8 @@
-// pages/HomePage.tsx
-import { Box, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 import GameGrid from "../components/GameGrid";
 import GenreList from "../components/GenereList";
-import PlatformSelector from "../components/PlatformSelector";
-import SortSelector from "../components/SortSelector";
-import CategoryChips from "../components/CategoryChips";
-import GameHeading from "../components/GameHeading";
 import NavBar from "../components/NavBar";
-import { GameQuery } from "../store";
+
 
 const HomePage = () => {
   return (

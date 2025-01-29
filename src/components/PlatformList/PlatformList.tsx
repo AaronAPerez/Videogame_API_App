@@ -5,7 +5,6 @@ import {
   Icon,
   Collapse,
   Button,
-  useDisclosure,
   Image,
   HStack,
   Spinner,
@@ -17,7 +16,7 @@ import useGameQueryStore from "../../store";
 import useParentPlatforms from "../../hooks/UseParentPlatforms";
 
 // Platform color mapping - Add more colors as needed
-const platformColors = {
+const platformColors: { [key: string]: string } = {
   pc: "#00A4EF", // Windows blue
   playstation: "#006FCD", // PlayStation blue
   xbox: "#107C10", // Xbox green

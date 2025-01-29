@@ -4,10 +4,8 @@ import {
   Text,
   Spinner,
   VStack,
-  Button,
   ButtonGroup,
   HStack,
-  Center,
   Heading,
 } from "@chakra-ui/react";
 import React from "react";
@@ -23,7 +21,6 @@ const GameGrid = () => {
   const {
     data,
     error,
-    isLoading,
     fetchNextPage,
     hasNextPage,
   } = useGames();
@@ -44,7 +41,7 @@ const GameGrid = () => {
   return (
     <>
     <Box py={1} borderRadius={20}>
-    <Box backgroundColor={'#121212'} minH="100vh" py={1} borderRadius={20}> 
+    <Box minH="100vh" py={1} borderRadius={20}> 
      <HStack alignContent={'Center'} px={4}>
    <Heading size={'h1'}>
       <GameHeading/>

@@ -16,12 +16,10 @@ const GenreList = () => {
   const selectedGenreId = useGameQueryStore(s => s.gameQuery.genreId);
   const setSelectedGenreId = useGameQueryStore(s => s.setGenreId);
   const { data } = useGenres();
-  const textColor = "white";
-  const hoverBg = "whiteAlpha.200";
   const selectedBg = "whiteAlpha.300";
 
   return (
-    <Box px={2} color={textColor} backgroundColor={'#121212'} borderRadius={20}>
+    <Box px={2} borderRadius={20}>
       <Heading size="lg" mb={4} px={2} py={1}>Genres</Heading>
       <List spacing={1}>
         {data?.results.map(genre => (
